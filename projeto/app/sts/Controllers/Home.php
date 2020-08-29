@@ -7,6 +7,7 @@ namespace App\sts\Controllers;
  */
 class Home {
     public function index() {
-        echo "Página home";
+        $viewHome = new \App\sts\Models\StsHome();
+        $viewHome->index();
     }
 }
