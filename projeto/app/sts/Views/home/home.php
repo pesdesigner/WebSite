@@ -106,25 +106,28 @@
                 <p><?php echo $this->dados['contato']['email_contato'];?></p>
             </div>
             <div class="col-lg-6">
-                <form>
+                <span class="msg"></span>
+                <form method="POST" id="insert_form">
+                    <input type="hidden" name="url" id="url" value="<?php echo URL; ?>contato">
                     <div class="form-group">
                       <label for="nome">Nome</label>
-                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo" required>
+                      <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Seu melhor e-mail" required>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Seu melhor e-mail">
                     </div>
                     <div class="form-group">
                         <label for="assunto">Assunto</label>
-                        <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Assunto da mensagem" required>
+                        <input type="text" class="form-control" id="assunto" name="assunto" placeholder="Assunto da mensagem">
                     </div>
                     <div class="form-group">
                         <label for="nome">Conteúdo</label>
-                        <textarea class="form-control" id="conteudo" name="conteudo" placeholder="Conteúdo da mensagem" required></textarea>
+                        <textarea class="form-control" id="conteudo" name="conteudo" placeholder="Conteúdo da mensagem"></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Enviar</button>
+                    <input type="submit" class="btn btn-primary" id="CadMsg" name="CadMsg" value="Enviar">
+                    
                   </form>
             </div>
         </div>
