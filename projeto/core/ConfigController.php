@@ -1,5 +1,10 @@
 <?php
 namespace Core;
+
+if(!defined('R4F5CC')){
+   header("Location: /");
+   die("Erro: Página não encontrada!");
+}
 /**
  * Description of ConfigController
  *
@@ -18,11 +23,15 @@ class ConfigController {
     }
     
     public function carregar(){
-
+        $this->config();
         $urlController = ucwords($this->url);
         $classe = "\\App\\sts\\Controllers\\" . $urlController;
         $classeCarregar = new $classe;
         $classeCarregar->index();
         
     }   
+    
+    private function config(){
+        define('URL','http://localhost/WebSite/projeto/');
+    }
 }

@@ -1,5 +1,10 @@
 <?php
 namespace App\sts\Models;
+
+if(!defined('R4F5CC')){
+   header("Location: /");
+   die("Erro: Página não encontrada!");
+}
 /**
  * Description of StsHome
  *
@@ -17,7 +22,7 @@ class StsHome extends Conn {
         $this->viewAcao();
         $this->viewContato();
         $this->viewRodape();
-        var_dump($this->dados);
+        return $this->dados;
     }
     
     private function viewTopo(){
@@ -30,7 +35,7 @@ class StsHome extends Conn {
     
     private function viewServ(){
     $query_serv = "SELECT titulo_serv, subtitulo_serv, icone_um_serv, titulo_um_serv, desc_um_serv,"
-    . " icone_dois_serv, titulo_dois_serv, desc_dois_serv, icone_tres_serv, titulo_tres_serv"
+    . " icone_dois_serv, titulo_dois_serv, desc_dois_serv, icone_tres_serv, titulo_tres_serv,"
     . " desc_tres_serv FROM homes_servicos LIMIT 1";
     $result_serv = $this->conn->prepare($query_serv);
     $result_serv->execute();

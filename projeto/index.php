@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <title>Web Site</title>
-    </head>
-    <body>
-        <?php
-        require './vendor/autoload.php';
-        $url = new Core\ConfigController();
-        $url->carregar();
-        ?>
-    </body>
-</html>
+<?php
+ob_start();
+
+define('R4F5CC', true);
+
+require './vendor/autoload.php';
+$url = new Core\ConfigController();
+$url->carregar();
+
+
